@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-06",
+  "updatedAt": "2026-08-10",
   "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
   "conditionCatalog": [
     {
@@ -32,6 +32,16 @@
       "id": "bankingTransfer",
       "label": "인터넷·스마트뱅킹 이체를 월 2건 이상 해요",
       "hint": "농협 등 일부 상품의 기본 조건"
+    },
+    {
+      "id": "age39",
+      "label": "만 39세 이하예요",
+      "hint": "가입 시점의 나이 기준입니다"
+    },
+    {
+      "id": "simplePayRegister",
+      "label": "간편결제 결제계좌로 등록할 수 있어요",
+      "hint": "네이버페이·카카오페이 등에 이 계좌를 결제수단으로 등록하는 조건. 결제 실적까지는 요구하지 않습니다"
     }
   ],
   "products": [
@@ -508,13 +518,6 @@
       "product": "기업자유예금",
       "status": "excluded",
       "excludeReason": "법인·개인사업자 전용 상품입니다.",
-      "confidence": "high"
-    },
-    {
-      "bank": "SBI저축은행",
-      "product": "아이통장",
-      "status": "excluded",
-      "excludeReason": "만 19세 미만 전용 상품입니다.",
       "confidence": "high"
     },
     {
@@ -1003,6 +1006,63 @@
       ],
       "bonuses": [],
       "notice": "우대조건 없이 7,000만원까지 연 3.0%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
+    },
+    {
+      "bank": "SBI저축은행",
+      "product": "생활파킹통장",
+      "status": "ok",
+      "confidence": "high",
+      "eligibility": {
+        "personalOnly": true
+      },
+      "tierMode": "marginal",
+      "tiers": [
+        {
+          "upTo": 2000000,
+          "rate": 2.7
+        },
+        {
+          "upTo": 100000000,
+          "rate": 1.7
+        },
+        {
+          "upTo": null,
+          "rate": 0.2
+        }
+      ],
+      "bonuses": [
+        {
+          "id": "sbi_life_new",
+          "requires": [
+            "firstTrade"
+          ],
+          "label": "신규고객 (계좌 개설 후 1년간)",
+          "rate": 4.0,
+          "capAmount": 2000000,
+          "months": 12
+        },
+        {
+          "id": "sbi_life_youth",
+          "requires": [
+            "age39"
+          ],
+          "label": "만 39세 이하",
+          "rate": 0.5,
+          "capAmount": 2000000,
+          "months": null
+        },
+        {
+          "id": "sbi_life_simplepay",
+          "requires": [
+            "simplePayRegister"
+          ],
+          "label": "간편결제 결제계좌 등록",
+          "rate": 0.5,
+          "capAmount": 2000000,
+          "months": null
+        }
+      ],
+      "notice": "우대금리는 200만원 이하 금액에만 붙어요. 신규고객 4.0%는 계좌 개설 후 1년 동안만 적용되고, 그 뒤에는 빠집니다. 1인 1계좌."
     }
   ]
 }
