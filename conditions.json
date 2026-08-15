@@ -1,1068 +1,1068 @@
 {
-  "version": 1,
-  "updatedAt": "2026-08-10",
-  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
-  "conditionCatalog": [
+ "version": 1,
+ "updatedAt": "2026-08-15",
+ "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
+ "conditionCatalog": [
+  {
+   "id": "firstTrade",
+   "label": "이 은행과 첫 거래예요",
+   "hint": "직전에 이 은행 입출금계좌를 갖고 있지 않았던 경우"
+  },
+  {
+   "id": "marketing",
+   "label": "마케팅·광고 수신에 동의할 수 있어요",
+   "hint": "문자/앱 푸시 수신 동의. 대부분 해지 전까지 유지해야 우대가 계속됩니다"
+  },
+  {
+   "id": "salary",
+   "label": "급여이체를 할 수 있어요",
+   "hint": "월급을 이 계좌로 받는 조건"
+  },
+  {
+   "id": "cardUse",
+   "label": "체크카드·간편결제를 월 10만원 이상 써요",
+   "hint": "실적 미달 시 우대가 빠집니다"
+  },
+  {
+   "id": "autoTransfer",
+   "label": "자동이체를 등록할 수 있어요",
+   "hint": "적금·대출 납입 또는 공과금 자동납부"
+  },
+  {
+   "id": "bankingTransfer",
+   "label": "인터넷·스마트뱅킹 이체를 월 2건 이상 해요",
+   "hint": "농협 등 일부 상품의 기본 조건"
+  },
+  {
+   "id": "age39",
+   "label": "만 39세 이하예요",
+   "hint": "가입 시점의 나이 기준입니다"
+  },
+  {
+   "id": "simplePayRegister",
+   "label": "간편결제 결제계좌로 등록할 수 있어요",
+   "hint": "네이버페이·카카오페이 등에 이 계좌를 결제수단으로 등록하는 조건. 결제 실적까지는 요구하지 않습니다"
+  }
+ ],
+ "products": [
+  {
+   "bank": "OK저축은행",
+   "product": "OK짠테크통장Ⅱ",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "firstTradeRequired": true,
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
     {
-      "id": "firstTrade",
-      "label": "이 은행과 첫 거래예요",
-      "hint": "직전에 이 은행 입출금계좌를 갖고 있지 않았던 경우"
+     "upTo": 500000,
+     "rate": 5.0
     },
     {
-      "id": "marketing",
-      "label": "마케팅·광고 수신에 동의할 수 있어요",
-      "hint": "문자/앱 푸시 수신 동의. 대부분 해지 전까지 유지해야 우대가 계속됩니다"
+     "upTo": 5000000,
+     "rate": 0.8
     },
     {
-      "id": "salary",
-      "label": "급여이체를 할 수 있어요",
-      "hint": "월급을 이 계좌로 받는 조건"
+     "upTo": 50000000,
+     "rate": 0.1
     },
     {
-      "id": "cardUse",
-      "label": "체크카드·간편결제를 월 10만원 이상 써요",
-      "hint": "실적 미달 시 우대가 빠집니다"
-    },
-    {
-      "id": "autoTransfer",
-      "label": "자동이체를 등록할 수 있어요",
-      "hint": "적금·대출 납입 또는 공과금 자동납부"
-    },
-    {
-      "id": "bankingTransfer",
-      "label": "인터넷·스마트뱅킹 이체를 월 2건 이상 해요",
-      "hint": "농협 등 일부 상품의 기본 조건"
-    },
-    {
-      "id": "age39",
-      "label": "만 39세 이하예요",
-      "hint": "가입 시점의 나이 기준입니다"
-    },
-    {
-      "id": "simplePayRegister",
-      "label": "간편결제 결제계좌로 등록할 수 있어요",
-      "hint": "네이버페이·카카오페이 등에 이 계좌를 결제수단으로 등록하는 조건. 결제 실적까지는 요구하지 않습니다"
+     "upTo": null,
+     "rate": 1.0
     }
-  ],
-  "products": [
+   ],
+   "bonuses": [
     {
-      "bank": "OK저축은행",
-      "product": "OK짠테크통장Ⅱ",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "firstTradeRequired": true,
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 500000,
-          "rate": 5.0
-        },
-        {
-          "upTo": 5000000,
-          "rate": 0.8
-        },
-        {
-          "upTo": 50000000,
-          "rate": 0.1
-        },
-        {
-          "upTo": null,
-          "rate": 1.0
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "ok_pay_marketing",
-          "requires": [
-            "marketing",
-            "cardUse"
-          ],
-          "label": "4대페이·카드결제 계좌 등록 + 마케팅 동의",
-          "rate": 2.0,
-          "capAmount": 500000,
-          "months": null
-        }
-      ],
-      "notice": "우대금리는 50만원 이하 금액에만 붙습니다. 그 위 구간은 0.1~1.0%로 뚝 떨어집니다."
-    },
-    {
-      "bank": "대신저축은행",
-      "product": "대신 더더더파킹",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 2.0
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "daishin_new",
-          "group": "daishin",
-          "requires": [
-            "firstTrade",
-            "marketing"
-          ],
-          "label": "첫 거래 + 마케팅 수신동의",
-          "rate": 4.0,
-          "capAmount": 2000000,
-          "months": 12
-        },
-        {
-          "id": "daishin_old",
-          "group": "daishin",
-          "requires": [
-            "marketing"
-          ],
-          "label": "기존 고객 + 마케팅 수신동의",
-          "rate": 2.0,
-          "capAmount": 2000000,
-          "months": null
-        }
-      ],
-      "notice": "첫 거래 우대(4.0%p)는 가입일로부터 1년간만 적용되고, 200만원 이하 금액에만 붙습니다."
-    },
-    {
-      "bank": "광주은행",
-      "product": "매일이자Wa파킹통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "firstTradeRequired": true,
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 2.5
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "gwangju_event",
-          "auto": true,
-          "label": "이벤트 기간 가입 우대",
-          "rate": 2.6,
-          "capAmount": 300000,
-          "months": 2
-        }
-      ],
-      "notice": "5.1%는 30만원 이하 금액에 2개월만 붙는 이벤트 금리입니다. 실제로 받는 금리는 대부분 2.5%입니다."
-    },
-    {
-      "bank": "다올저축은행",
-      "product": "Fi 쌈짓돈Ⅲ 통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 1000000,
-          "rate": 5.0
-        },
-        {
-          "upTo": 5000000,
-          "rate": 3.6
-        },
-        {
-          "upTo": 30000000,
-          "rate": 3.5
-        },
-        {
-          "upTo": 50000000,
-          "rate": 3.4
-        },
-        {
-          "upTo": null,
-          "rate": 1.0
-        }
-      ],
-      "bonuses": [],
-      "notice": "우대조건 없이 구간별로 그대로 받습니다. 5천만원까지는 3.4% 이상이 유지됩니다."
-    },
-    {
-      "bank": "SC제일은행",
-      "product": "스마트박스통장",
-      "status": "excluded",
-      "excludeReason": "우대금리가 '매일 잔액의 50%'에만 적용되는 특수 구조라 금액 기준 계산이 불가능합니다.",
-      "confidence": "high"
-    },
-    {
-      "bank": "카카오뱅크",
-      "product": "카카오뱅크 저금통",
-      "status": "excluded",
-      "excludeReason": "한도 10만원의 잔돈 저축 전용이고 자동저축으로만 입금됩니다. 목돈을 넣을 수 없습니다.",
-      "confidence": "high"
-    },
-    {
-      "bank": "전북은행",
-      "product": "씨드모아(소액우대) 통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 50000000,
-          "rate": 2.0
-        },
-        {
-          "upTo": null,
-          "rate": 1.8
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "jb_s_bonus",
-          "auto": true,
-          "label": "가입 보너스 금리",
-          "rate": 1.0,
-          "capAmount": null,
-          "months": 3
-        },
-        {
-          "id": "jb_s_first",
-          "requires": [
-            "firstTrade"
-          ],
-          "label": "전북은행 첫 거래",
-          "rate": 0.8,
-          "capAmount": null,
-          "months": 3
-        },
-        {
-          "id": "jb_s_mkt",
-          "requires": [
-            "marketing"
-          ],
-          "label": "마케팅 동의",
-          "rate": 0.2,
-          "capAmount": null,
-          "months": 3
-        }
-      ],
-      "notice": "우대금리는 전부 가입 후 3개월간만 제공됩니다. 4개월째부터는 2.0%로 내려갑니다."
-    },
-    {
-      "bank": "전북은행",
-      "product": "씨드모아(고액우대) 통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "whole",
-      "tiers": [
-        {
-          "upTo": 50000000,
-          "rate": 1.8
-        },
-        {
-          "upTo": null,
-          "rate": 2.0
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "jb_h_bonus",
-          "auto": true,
-          "label": "가입 보너스 금리",
-          "rate": 1.0,
-          "capAmount": null,
-          "months": 3
-        },
-        {
-          "id": "jb_h_first",
-          "requires": [
-            "firstTrade"
-          ],
-          "label": "전북은행 첫 거래",
-          "rate": 0.8,
-          "capAmount": null,
-          "months": 3
-        },
-        {
-          "id": "jb_h_mkt",
-          "requires": [
-            "marketing"
-          ],
-          "label": "마케팅 동의",
-          "rate": 0.2,
-          "capAmount": null,
-          "months": 3
-        }
-      ],
-      "notice": "이 상품은 구간별이 아니라 '잔액 전체'에 하나의 금리가 붙습니다. 5천만원을 넘겨야 2.0%가 됩니다. 우대는 3개월 한정입니다."
-    },
-    {
-      "bank": "케이뱅크",
-      "product": "챌린지박스",
-      "status": "excluded",
-      "excludeReason": "30~200일 목표를 정해 묶어두는 챌린지 상품입니다. 언제든 빼 쓰는 파킹 용도가 아닙니다.",
-      "confidence": "high"
-    },
-    {
-      "bank": "애큐온저축은행",
-      "product": "애큐온모바일자유예금",
-      "status": "ok",
-      "confidence": "conservative",
-      "eligibility": {
-        "firstTradeRequired": true,
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 3.4
-        }
-      ],
-      "bonuses": [],
-      "notice": "공시 최고금리는 3.5%지만 우대조건이 공시에 적혀 있지 않아, 조건 없이 확실히 받는 3.4%로만 계산했습니다."
-    },
-    {
-      "bank": "고려저축은행",
-      "product": "보고파플러스 파킹통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true,
-        "ageMin": 19
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 3.1
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "goryeo_first",
-          "requires": [
-            "firstTrade"
-          ],
-          "label": "고려저축은행 예·적금 가입 이력 없음",
-          "rate": 0.1,
-          "capAmount": null,
-          "months": null
-        },
-        {
-          "id": "goryeo_auto",
-          "requires": [
-            "autoTransfer"
-          ],
-          "label": "자동이체 등록",
-          "rate": 0.1,
-          "capAmount": null,
-          "months": null
-        },
-        {
-          "id": "goryeo_card",
-          "requires": [
-            "cardUse"
-          ],
-          "label": "체크카드 월 10만원 이상",
-          "rate": 0.1,
-          "capAmount": null,
-          "months": null
-        }
-      ],
-      "notice": "가입금액·기간 제한이 없어 큰 금액을 한 곳에 둘 때 유리합니다."
-    },
-    {
-      "bank": "예가람저축은행",
-      "product": "E-RUN플러스 파킹통장",
-      "status": "ok",
-      "confidence": "conservative",
-      "eligibility": {
-        "personalOnly": true,
-        "ageMin": 19
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 50000000,
-          "rate": 2.7
-        },
-        {
-          "upTo": null,
-          "rate": 2.7
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "yegaram_first",
-          "requires": [
-            "firstTrade"
-          ],
-          "label": "예가람 예·적금 가입 이력 없음",
-          "rate": 0.1,
-          "capAmount": null,
-          "months": null
-        },
-        {
-          "id": "yegaram_auto",
-          "requires": [
-            "autoTransfer"
-          ],
-          "label": "자동이체 등록",
-          "rate": 0.1,
-          "capAmount": null,
-          "months": null
-        },
-        {
-          "id": "yegaram_card",
-          "requires": [
-            "cardUse"
-          ],
-          "label": "체크카드 월 10만원 이상",
-          "rate": 0.1,
-          "capAmount": null,
-          "months": null
-        }
-      ],
-      "notice": "공시 최고금리 3.5%와 우대조건 합계(3.0%)가 맞지 않아, 확인 가능한 조건만으로 낮게 계산했습니다."
-    },
-    {
-      "bank": "DB저축은행",
-      "product": "DB행복파킹통장",
-      "status": "ok",
-      "confidence": "inferred",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 0.8
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "db_first_mkt",
-          "requires": [
-            "firstTrade",
-            "marketing"
-          ],
-          "label": "첫 거래 + 마케팅 동의",
-          "rate": 2.7,
-          "capAmount": 5000000,
-          "months": null
-        }
-      ],
-      "notice": "공시에 우대금리 배분이 적혀 있지 않아, 두 조건을 모두 채웠을 때 최고금리가 되는 것으로 보고 계산했습니다. 가입 전 은행 확인을 권합니다."
-    },
-    {
-      "bank": "예가람저축은행",
-      "product": "The프리미엄 Biz통장",
-      "status": "excluded",
-      "excludeReason": "법인·개인사업자 전용 상품입니다.",
-      "confidence": "high"
-    },
-    {
-      "bank": "IBK저축은행",
-      "product": "IBKSB e-파킹통장",
-      "status": "ok",
-      "confidence": "conservative",
-      "eligibility": {
-        "firstTradeRequired": true,
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 100000000,
-          "rate": 2.7
-        },
-        {
-          "upTo": 300000000,
-          "rate": 2.8
-        },
-        {
-          "upTo": 1000000000,
-          "rate": 1.5
-        },
-        {
-          "upTo": null,
-          "rate": 0.1
-        }
-      ],
-      "bonuses": [],
-      "notice": "20영업일 이내 타 금융기관 입출금계좌를 만들었다면 가입이 제한됩니다."
-    },
-    {
-      "bank": "IBK저축은행",
-      "product": "IBK모임통장",
-      "status": "excluded",
-      "excludeReason": "모임장·모임원 구조의 모임 전용 통장입니다. 개인 파킹 용도가 아닙니다.",
-      "confidence": "high"
-    },
-    {
-      "bank": "참저축은행",
-      "product": "기업자유예금",
-      "status": "excluded",
-      "excludeReason": "법인·개인사업자 전용 상품입니다.",
-      "confidence": "high"
-    },
-    {
-      "bank": "예가람저축은행",
-      "product": "The프리미엄 멤버십 파킹통장",
-      "status": "ok",
-      "confidence": "conservative",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 200000000,
-          "rate": 3.1
-        },
-        {
-          "upTo": null,
-          "rate": 3.1
-        }
-      ],
-      "bonuses": [],
-      "notice": "우대조건 없이 받는 금리입니다."
-    },
-    {
-      "bank": "우리은행",
-      "product": "우월한 월급 통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 0.1
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "woori_salary",
-          "requires": [
-            "salary"
-          ],
-          "label": "전월 급여이체 실적",
-          "rate": 2.0,
-          "capAmount": 2000000,
-          "months": null
-        },
-        {
-          "id": "woori_first_salary",
-          "requires": [
-            "salary",
-            "firstTrade"
-          ],
-          "label": "첫 급여이체 (가입 후 1년)",
-          "rate": 1.0,
-          "capAmount": 2000000,
-          "months": 12
-        }
-      ],
-      "notice": "우대금리는 200만원 이하 금액에만 붙습니다. 급여이체가 없으면 0.1%입니다."
-    },
-    {
-      "bank": "OK저축은행",
-      "product": "OK파킹플렉스통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "firstTradeRequired": true,
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 5000000,
-          "rate": 3.01
-        },
-        {
-          "upTo": 300000000,
-          "rate": 2.4
-        },
-        {
-          "upTo": null,
-          "rate": 1.5
-        }
-      ],
-      "bonuses": [],
-      "notice": "우대조건 없이 구간별로 그대로 받습니다. 큰 금액도 2.4%가 유지돼 목돈에 유리합니다."
-    },
-    {
-      "bank": "JT저축은행",
-      "product": "JT점프업Ⅱ저축예금",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 50000000,
-          "rate": 3.01
-        },
-        {
-          "upTo": 100000000,
-          "rate": 2.75
-        },
-        {
-          "upTo": null,
-          "rate": 0.5
-        }
-      ],
-      "bonuses": [],
-      "notice": "우대조건 없이 구간별로 그대로 받습니다."
-    },
-    {
-      "bank": "다올저축은행",
-      "product": "Fi 저축예금",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 3.0
-        }
-      ],
-      "bonuses": [],
-      "notice": "금액 구간도 우대조건도 없이 전액 3.0%입니다."
-    },
-    {
-      "bank": "푸른저축은행",
-      "product": "E-푸른보통예금",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 3.0
-        }
-      ],
-      "bonuses": [],
-      "notice": "인터넷뱅킹 전용입니다. 가입 후 3개월 이내 해지하면 더 낮은 금리가 적용됩니다."
-    },
-    {
-      "bank": "Sh수협은행",
-      "product": "Sh매일받는통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 10000000,
-          "rate": 1.5
-        },
-        {
-          "upTo": 100000000,
-          "rate": 2.0
-        },
-        {
-          "upTo": null,
-          "rate": 0.1
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "sh_first",
-          "requires": [
-            "firstTrade"
-          ],
-          "label": "입출금통장 첫 거래 (신규 시)",
-          "rate": 0.9,
-          "capAmount": 100000000,
-          "months": null
-        },
-        {
-          "id": "sh_mkt",
-          "requires": [
-            "marketing"
-          ],
-          "label": "마케팅 동의 (신규 시)",
-          "rate": 0.1,
-          "capAmount": 100000000,
-          "months": null
-        }
-      ],
-      "notice": "우대금리는 1억원 이하 금액에만 붙고, 신규 가입 시점에 조건을 채워야 합니다."
-    },
-    {
-      "bank": "페퍼저축은행",
-      "product": "페퍼스 파킹통장5",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 50000000,
-          "rate": 3.0
-        },
-        {
-          "upTo": null,
-          "rate": 1.0
-        }
-      ],
-      "bonuses": [],
-      "notice": "우대조건 없이 5천만원까지 3.0%입니다."
-    },
-    {
-      "bank": "푸른저축은행",
-      "product": "푸른보통예금",
-      "status": "ok",
-      "confidence": "conservative",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 1.0
-        }
-      ],
-      "bonuses": [],
-      "notice": "공시 최고 3.0%는 '거래 3년 이상 + 직전 2년 평잔 10억원 이상' 고객만 받는 금리라 제외했습니다."
-    },
-    {
-      "bank": "웰컴저축은행",
-      "product": "웰컴 주거래통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 300000000,
-          "rate": 0.8
-        },
-        {
-          "upTo": null,
-          "rate": 1.0
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "welcome_card",
-          "requires": [
-            "cardUse"
-          ],
-          "label": "간편결제·체크카드 이용실적",
-          "rate": 1.0,
-          "capAmount": 300000000,
-          "months": null
-        },
-        {
-          "id": "welcome_salary",
-          "requires": [
-            "salary"
-          ],
-          "label": "급여 또는 생활비 이체",
-          "rate": 0.5,
-          "capAmount": 300000000,
-          "months": null
-        },
-        {
-          "id": "welcome_auto",
-          "requires": [
-            "autoTransfer"
-          ],
-          "label": "CMS·지로 자동납부 출금",
-          "rate": 0.5,
-          "capAmount": 300000000,
-          "months": null
-        },
-        {
-          "id": "welcome_mkt",
-          "requires": [
-            "marketing"
-          ],
-          "label": "마케팅·멤버십 동의",
-          "rate": 0.2,
-          "capAmount": 300000000,
-          "months": null
-        }
-      ],
-      "notice": "조건을 모두 채워야 3.0%가 됩니다. 하나도 없으면 0.8%입니다."
-    },
-    {
-      "bank": "웰컴저축은행",
-      "product": "웰뱅 모두페이 통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 0.5
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "wellbang_pay",
-          "requires": [
-            "cardUse"
-          ],
-          "label": "간편결제 거래실적 월 10만원 이상",
-          "rate": 2.0,
-          "capAmount": 10000000,
-          "months": null
-        },
-        {
-          "id": "wellbang_bal",
-          "auto": true,
-          "label": "예치금 잔액 50만원 초과",
-          "rate": 0.5,
-          "capAmount": 10000000,
-          "months": null,
-          "minAmount": 500000
-        }
-      ],
-      "notice": "우대금리는 1천만원 이하 금액에만 붙습니다. 간편결제 실적이 없으면 1.0%까지 떨어집니다."
-    },
-    {
-      "bank": "한국투자저축은행",
-      "product": "한투 ACE 파킹통장",
-      "status": "ok",
-      "confidence": "inferred",
-      "eligibility": {
-        "personalOnly": true,
-        "ageMin": 19
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 100000000,
-          "rate": 3.0
-        },
-        {
-          "upTo": null,
-          "rate": 0.2
-        }
-      ],
-      "bonuses": [],
-      "notice": "공시에 구간이 문장으로 적혀 있지 않아, 한도(1억원)와 기본·최고금리로 구간을 해석했습니다. 가입 전 은행 확인을 권합니다."
-    },
-    {
-      "bank": "NH농협은행",
-      "product": "NH1934우대통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true,
-        "ageMin": 19,
-        "ageMax": 34
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": null,
-          "rate": 0.1
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "nh_main",
-          "requires": [
-            "bankingTransfer",
-            "cardUse"
-          ],
-          "label": "스마트뱅킹 월 2건 이체 + 카드·급여·자동이체 중 1개",
-          "rate": 2.9,
-          "capAmount": 1000000,
-          "months": null
-        }
-      ],
-      "notice": "만 19~34세 전용입니다. 우대금리는 100만원 이하 금액에만 붙습니다."
-    },
-    {
-      "bank": "BNK경남은행",
-      "product": "BNK파킹통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "firstTradeRequired": true,
-        "personalOnly": true,
-        "ageMin": 17
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 50000000,
-          "rate": 2.3
-        },
-        {
-          "upTo": 100000000,
-          "rate": 2.0
-        },
-        {
-          "upTo": null,
-          "rate": 0.01
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "bnk_event",
-          "requires": [
-            "marketing"
-          ],
-          "label": "은행마케팅·모바일메시지 수신동의 (이벤트)",
-          "rate": 0.7,
-          "capAmount": 50000000,
-          "months": 3
-        }
-      ],
-      "notice": "경남은행 첫 거래 고객만 가입할 수 있고, 이벤트 우대는 3개월 한정입니다."
-    },
-    {
-      "bank": "DB저축은행",
-      "product": "M-DreamBig 보통예금",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true,
-        "ageMin": 19
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 70000000,
-          "rate": 3.0
-        },
-        {
-          "upTo": 1000000000,
-          "rate": 1.5
-        },
-        {
-          "upTo": null,
-          "rate": 0.5
-        }
-      ],
-      "bonuses": [],
-      "notice": "우대조건 없이 7,000만원까지 연 3.0%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
-    },
-    {
-      "bank": "DB저축은행",
-      "product": "DreamBig 보통예금",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true,
-        "ageMin": 19
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 70000000,
-          "rate": 3.0
-        },
-        {
-          "upTo": 1000000000,
-          "rate": 1.5
-        },
-        {
-          "upTo": null,
-          "rate": 0.5
-        }
-      ],
-      "bonuses": [],
-      "notice": "우대조건 없이 7,000만원까지 연 3.0%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
-    },
-    {
-      "bank": "SBI저축은행",
-      "product": "생활파킹통장",
-      "status": "ok",
-      "confidence": "high",
-      "eligibility": {
-        "personalOnly": true
-      },
-      "tierMode": "marginal",
-      "tiers": [
-        {
-          "upTo": 2000000,
-          "rate": 2.7
-        },
-        {
-          "upTo": 100000000,
-          "rate": 1.7
-        },
-        {
-          "upTo": null,
-          "rate": 0.2
-        }
-      ],
-      "bonuses": [
-        {
-          "id": "sbi_life_new",
-          "requires": [
-            "firstTrade"
-          ],
-          "label": "신규고객 (계좌 개설 후 1년간)",
-          "rate": 4.0,
-          "capAmount": 2000000,
-          "months": 12
-        },
-        {
-          "id": "sbi_life_youth",
-          "requires": [
-            "age39"
-          ],
-          "label": "만 39세 이하",
-          "rate": 0.5,
-          "capAmount": 2000000,
-          "months": null
-        },
-        {
-          "id": "sbi_life_simplepay",
-          "requires": [
-            "simplePayRegister"
-          ],
-          "label": "간편결제 결제계좌 등록",
-          "rate": 0.5,
-          "capAmount": 2000000,
-          "months": null
-        }
-      ],
-      "notice": "우대금리는 200만원 이하 금액에만 붙어요. 신규고객 4.0%는 계좌 개설 후 1년 동안만 적용되고, 그 뒤에는 빠집니다. 1인 1계좌."
+     "id": "ok_pay_marketing",
+     "requires": [
+      "marketing",
+      "cardUse"
+     ],
+     "label": "4대페이·카드결제 계좌 등록 + 마케팅 동의",
+     "rate": 2.0,
+     "capAmount": 500000,
+     "months": null
     }
-  ]
+   ],
+   "notice": "우대금리는 50만원 이하 금액에만 붙습니다. 그 위 구간은 0.1~1.0%로 뚝 떨어집니다."
+  },
+  {
+   "bank": "대신저축은행",
+   "product": "대신 더더더파킹",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 2.0
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "daishin_new",
+     "group": "daishin",
+     "requires": [
+      "firstTrade",
+      "marketing"
+     ],
+     "label": "첫 거래 + 마케팅 수신동의",
+     "rate": 4.0,
+     "capAmount": 2000000,
+     "months": 12
+    },
+    {
+     "id": "daishin_old",
+     "group": "daishin",
+     "requires": [
+      "marketing"
+     ],
+     "label": "기존 고객 + 마케팅 수신동의",
+     "rate": 2.0,
+     "capAmount": 2000000,
+     "months": null
+    }
+   ],
+   "notice": "첫 거래 우대(4.0%p)는 가입일로부터 1년간만 적용되고, 200만원 이하 금액에만 붙습니다."
+  },
+  {
+   "bank": "광주은행",
+   "product": "매일이자Wa파킹통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "firstTradeRequired": true,
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 2.5
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "gwangju_event",
+     "auto": true,
+     "label": "이벤트 기간 가입 우대",
+     "rate": 2.6,
+     "capAmount": 300000,
+     "months": 2
+    }
+   ],
+   "notice": "5.1%는 30만원 이하 금액에 2개월만 붙는 이벤트 금리입니다. 실제로 받는 금리는 대부분 2.5%입니다."
+  },
+  {
+   "bank": "다올저축은행",
+   "product": "Fi 쌈짓돈Ⅲ 통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 1000000,
+     "rate": 5.0
+    },
+    {
+     "upTo": 5000000,
+     "rate": 3.6
+    },
+    {
+     "upTo": 30000000,
+     "rate": 3.5
+    },
+    {
+     "upTo": 50000000,
+     "rate": 3.4
+    },
+    {
+     "upTo": null,
+     "rate": 1.0
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 구간별로 그대로 받습니다. 5천만원까지는 3.4% 이상이 유지됩니다."
+  },
+  {
+   "bank": "SC제일은행",
+   "product": "스마트박스통장",
+   "status": "excluded",
+   "excludeReason": "우대금리가 '매일 잔액의 50%'에만 적용되는 특수 구조라 금액 기준 계산이 불가능합니다.",
+   "confidence": "high"
+  },
+  {
+   "bank": "카카오뱅크",
+   "product": "카카오뱅크 저금통",
+   "status": "excluded",
+   "excludeReason": "한도 10만원의 잔돈 저축 전용이고 자동저축으로만 입금됩니다. 목돈을 넣을 수 없습니다.",
+   "confidence": "high"
+  },
+  {
+   "bank": "전북은행",
+   "product": "씨드모아(소액우대) 통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 50000000,
+     "rate": 2.0
+    },
+    {
+     "upTo": null,
+     "rate": 1.8
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "jb_s_bonus",
+     "auto": true,
+     "label": "가입 보너스 금리",
+     "rate": 1.0,
+     "capAmount": null,
+     "months": 3
+    },
+    {
+     "id": "jb_s_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "전북은행 첫 거래",
+     "rate": 0.8,
+     "capAmount": null,
+     "months": 3
+    },
+    {
+     "id": "jb_s_mkt",
+     "requires": [
+      "marketing"
+     ],
+     "label": "마케팅 동의",
+     "rate": 0.2,
+     "capAmount": null,
+     "months": 3
+    }
+   ],
+   "notice": "우대금리는 전부 가입 후 3개월간만 제공됩니다. 4개월째부터는 2.0%로 내려갑니다."
+  },
+  {
+   "bank": "전북은행",
+   "product": "씨드모아(고액우대) 통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "whole",
+   "tiers": [
+    {
+     "upTo": 50000000,
+     "rate": 1.8
+    },
+    {
+     "upTo": null,
+     "rate": 2.0
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "jb_h_bonus",
+     "auto": true,
+     "label": "가입 보너스 금리",
+     "rate": 1.0,
+     "capAmount": null,
+     "months": 3
+    },
+    {
+     "id": "jb_h_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "전북은행 첫 거래",
+     "rate": 0.8,
+     "capAmount": null,
+     "months": 3
+    },
+    {
+     "id": "jb_h_mkt",
+     "requires": [
+      "marketing"
+     ],
+     "label": "마케팅 동의",
+     "rate": 0.2,
+     "capAmount": null,
+     "months": 3
+    }
+   ],
+   "notice": "이 상품은 구간별이 아니라 '잔액 전체'에 하나의 금리가 붙습니다. 5천만원을 넘겨야 2.0%가 됩니다. 우대는 3개월 한정입니다."
+  },
+  {
+   "bank": "케이뱅크",
+   "product": "챌린지박스",
+   "status": "excluded",
+   "excludeReason": "30~200일 목표를 정해 묶어두는 챌린지 상품입니다. 언제든 빼 쓰는 파킹 용도가 아닙니다.",
+   "confidence": "high"
+  },
+  {
+   "bank": "애큐온저축은행",
+   "product": "애큐온모바일자유예금",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "firstTradeRequired": true,
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 3.4
+    }
+   ],
+   "bonuses": [],
+   "notice": "공시 최고금리는 3.5%지만 우대조건이 공시에 적혀 있지 않아, 조건 없이 확실히 받는 3.4%로만 계산했습니다."
+  },
+  {
+   "bank": "고려저축은행",
+   "product": "보고파플러스 파킹통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 3.1
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "goryeo_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "고려저축은행 예·적금 가입 이력 없음",
+     "rate": 0.1,
+     "capAmount": null,
+     "months": null
+    },
+    {
+     "id": "goryeo_auto",
+     "requires": [
+      "autoTransfer"
+     ],
+     "label": "자동이체 등록",
+     "rate": 0.1,
+     "capAmount": null,
+     "months": null
+    },
+    {
+     "id": "goryeo_card",
+     "requires": [
+      "cardUse"
+     ],
+     "label": "체크카드 월 10만원 이상",
+     "rate": 0.1,
+     "capAmount": null,
+     "months": null
+    }
+   ],
+   "notice": "가입금액·기간 제한이 없어 큰 금액을 한 곳에 둘 때 유리합니다."
+  },
+  {
+   "bank": "예가람저축은행",
+   "product": "E-RUN플러스 파킹통장",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 50000000,
+     "rate": 2.7
+    },
+    {
+     "upTo": null,
+     "rate": 2.7
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "yegaram_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "예가람 예·적금 가입 이력 없음",
+     "rate": 0.1,
+     "capAmount": null,
+     "months": null
+    },
+    {
+     "id": "yegaram_auto",
+     "requires": [
+      "autoTransfer"
+     ],
+     "label": "자동이체 등록",
+     "rate": 0.1,
+     "capAmount": null,
+     "months": null
+    },
+    {
+     "id": "yegaram_card",
+     "requires": [
+      "cardUse"
+     ],
+     "label": "체크카드 월 10만원 이상",
+     "rate": 0.1,
+     "capAmount": null,
+     "months": null
+    }
+   ],
+   "notice": "공시 최고금리 3.5%와 우대조건 합계(3.0%)가 맞지 않아, 확인 가능한 조건만으로 낮게 계산했습니다."
+  },
+  {
+   "bank": "DB저축은행",
+   "product": "DB행복파킹통장",
+   "status": "ok",
+   "confidence": "inferred",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 0.8
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "db_first_mkt",
+     "requires": [
+      "firstTrade",
+      "marketing"
+     ],
+     "label": "첫 거래 + 마케팅 동의",
+     "rate": 2.7,
+     "capAmount": 5000000,
+     "months": null
+    }
+   ],
+   "notice": "공시에 우대금리 배분이 적혀 있지 않아, 두 조건을 모두 채웠을 때 최고금리가 되는 것으로 보고 계산했습니다. 가입 전 은행 확인을 권합니다."
+  },
+  {
+   "bank": "예가람저축은행",
+   "product": "The프리미엄 Biz통장",
+   "status": "excluded",
+   "excludeReason": "법인·개인사업자 전용 상품입니다.",
+   "confidence": "high"
+  },
+  {
+   "bank": "IBK저축은행",
+   "product": "IBKSB e-파킹통장",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "firstTradeRequired": true,
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 100000000,
+     "rate": 2.7
+    },
+    {
+     "upTo": 300000000,
+     "rate": 2.8
+    },
+    {
+     "upTo": 1000000000,
+     "rate": 1.5
+    },
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [],
+   "notice": "20영업일 이내 타 금융기관 입출금계좌를 만들었다면 가입이 제한됩니다."
+  },
+  {
+   "bank": "IBK저축은행",
+   "product": "IBK모임통장",
+   "status": "excluded",
+   "excludeReason": "모임장·모임원 구조의 모임 전용 통장입니다. 개인 파킹 용도가 아닙니다.",
+   "confidence": "high"
+  },
+  {
+   "bank": "참저축은행",
+   "product": "기업자유예금",
+   "status": "excluded",
+   "excludeReason": "법인·개인사업자 전용 상품입니다.",
+   "confidence": "high"
+  },
+  {
+   "bank": "예가람저축은행",
+   "product": "The프리미엄 멤버십 파킹통장",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 200000000,
+     "rate": 3.1
+    },
+    {
+     "upTo": null,
+     "rate": 3.1
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 받는 금리입니다."
+  },
+  {
+   "bank": "우리은행",
+   "product": "우월한 월급 통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "woori_salary",
+     "requires": [
+      "salary"
+     ],
+     "label": "전월 급여이체 실적",
+     "rate": 2.0,
+     "capAmount": 2000000,
+     "months": null
+    },
+    {
+     "id": "woori_first_salary",
+     "requires": [
+      "salary",
+      "firstTrade"
+     ],
+     "label": "첫 급여이체 (가입 후 1년)",
+     "rate": 1.0,
+     "capAmount": 2000000,
+     "months": 12
+    }
+   ],
+   "notice": "우대금리는 200만원 이하 금액에만 붙습니다. 급여이체가 없으면 0.1%입니다."
+  },
+  {
+   "bank": "OK저축은행",
+   "product": "OK파킹플렉스통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "firstTradeRequired": true,
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 5000000,
+     "rate": 3.01
+    },
+    {
+     "upTo": 300000000,
+     "rate": 2.4
+    },
+    {
+     "upTo": null,
+     "rate": 1.5
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 구간별로 그대로 받습니다. 큰 금액도 2.4%가 유지돼 목돈에 유리합니다."
+  },
+  {
+   "bank": "JT저축은행",
+   "product": "JT점프업Ⅱ저축예금",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 50000000,
+     "rate": 3.01
+    },
+    {
+     "upTo": 100000000,
+     "rate": 2.75
+    },
+    {
+     "upTo": null,
+     "rate": 0.5
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 구간별로 그대로 받습니다."
+  },
+  {
+   "bank": "다올저축은행",
+   "product": "Fi 저축예금",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 2.8
+    }
+   ],
+   "bonuses": [],
+   "notice": "금액 구간도 우대조건도 없이 전액 2.8%입니다."
+  },
+  {
+   "bank": "푸른저축은행",
+   "product": "E-푸른보통예금",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 3.0
+    }
+   ],
+   "bonuses": [],
+   "notice": "인터넷뱅킹 전용입니다. 가입 후 3개월 이내 해지하면 더 낮은 금리가 적용됩니다."
+  },
+  {
+   "bank": "Sh수협은행",
+   "product": "Sh매일받는통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 10000000,
+     "rate": 1.5
+    },
+    {
+     "upTo": 100000000,
+     "rate": 2.0
+    },
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "sh_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "입출금통장 첫 거래 (신규 시)",
+     "rate": 0.9,
+     "capAmount": 100000000,
+     "months": null
+    },
+    {
+     "id": "sh_mkt",
+     "requires": [
+      "marketing"
+     ],
+     "label": "마케팅 동의 (신규 시)",
+     "rate": 0.1,
+     "capAmount": 100000000,
+     "months": null
+    }
+   ],
+   "notice": "우대금리는 1억원 이하 금액에만 붙고, 신규 가입 시점에 조건을 채워야 합니다."
+  },
+  {
+   "bank": "페퍼저축은행",
+   "product": "페퍼스 파킹통장5",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 50000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": null,
+     "rate": 1.0
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 5천만원까지 3.0%입니다."
+  },
+  {
+   "bank": "푸른저축은행",
+   "product": "푸른보통예금",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 1.0
+    }
+   ],
+   "bonuses": [],
+   "notice": "공시 최고 3.0%는 '거래 3년 이상 + 직전 2년 평잔 10억원 이상' 고객만 받는 금리라 제외했습니다."
+  },
+  {
+   "bank": "웰컴저축은행",
+   "product": "웰컴 주거래통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 300000000,
+     "rate": 0.8
+    },
+    {
+     "upTo": null,
+     "rate": 1.0
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "welcome_card",
+     "requires": [
+      "cardUse"
+     ],
+     "label": "간편결제·체크카드 이용실적",
+     "rate": 1.3,
+     "capAmount": 300000000,
+     "months": null
+    },
+    {
+     "id": "welcome_salary",
+     "requires": [
+      "salary"
+     ],
+     "label": "급여 또는 생활비 이체",
+     "rate": 0.5,
+     "capAmount": 300000000,
+     "months": null
+    },
+    {
+     "id": "welcome_auto",
+     "requires": [
+      "autoTransfer"
+     ],
+     "label": "CMS·지로 자동납부 출금",
+     "rate": 0.5,
+     "capAmount": 300000000,
+     "months": null
+    },
+    {
+     "id": "welcome_mkt",
+     "requires": [
+      "marketing"
+     ],
+     "label": "마케팅·멤버십 동의",
+     "rate": 0.2,
+     "capAmount": 300000000,
+     "months": null
+    }
+   ],
+   "notice": "조건을 모두 채워야 3.3%가 됩니다. 하나도 없으면 0.8%입니다."
+  },
+  {
+   "bank": "웰컴저축은행",
+   "product": "웰뱅 모두페이 통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 0.5
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "wellbang_pay",
+     "requires": [
+      "cardUse"
+     ],
+     "label": "간편결제 거래실적 월 10만원 이상",
+     "rate": 2.0,
+     "capAmount": 10000000,
+     "months": null
+    },
+    {
+     "id": "wellbang_bal",
+     "auto": true,
+     "label": "예치금 잔액 50만원 초과",
+     "rate": 0.5,
+     "capAmount": 10000000,
+     "months": null,
+     "minAmount": 500000
+    }
+   ],
+   "notice": "우대금리는 1천만원 이하 금액에만 붙습니다. 간편결제 실적이 없으면 1.0%까지 떨어집니다."
+  },
+  {
+   "bank": "한국투자저축은행",
+   "product": "한투 ACE 파킹통장",
+   "status": "ok",
+   "confidence": "inferred",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 100000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": null,
+     "rate": 0.2
+    }
+   ],
+   "bonuses": [],
+   "notice": "공시에 구간이 문장으로 적혀 있지 않아, 한도(1억원)와 기본·최고금리로 구간을 해석했습니다. 가입 전 은행 확인을 권합니다."
+  },
+  {
+   "bank": "NH농협은행",
+   "product": "NH1934우대통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19,
+    "ageMax": 34
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "nh_main",
+     "requires": [
+      "bankingTransfer",
+      "cardUse"
+     ],
+     "label": "스마트뱅킹 월 2건 이체 + 카드·급여·자동이체 중 1개",
+     "rate": 2.9,
+     "capAmount": 1000000,
+     "months": null
+    }
+   ],
+   "notice": "만 19~34세 전용입니다. 우대금리는 100만원 이하 금액에만 붙습니다."
+  },
+  {
+   "bank": "BNK경남은행",
+   "product": "BNK파킹통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "firstTradeRequired": true,
+    "personalOnly": true,
+    "ageMin": 17
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 50000000,
+     "rate": 2.3
+    },
+    {
+     "upTo": 100000000,
+     "rate": 2.0
+    },
+    {
+     "upTo": null,
+     "rate": 0.01
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "bnk_event",
+     "requires": [
+      "marketing"
+     ],
+     "label": "은행마케팅·모바일메시지 수신동의 (이벤트)",
+     "rate": 0.7,
+     "capAmount": 50000000,
+     "months": 3
+    }
+   ],
+   "notice": "경남은행 첫 거래 고객만 가입할 수 있고, 이벤트 우대는 3개월 한정입니다."
+  },
+  {
+   "bank": "DB저축은행",
+   "product": "M-DreamBig 보통예금",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 70000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": 1000000000,
+     "rate": 1.5
+    },
+    {
+     "upTo": null,
+     "rate": 0.5
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 7,000만원까지 연 3.0%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
+  },
+  {
+   "bank": "DB저축은행",
+   "product": "DreamBig 보통예금",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 70000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": 1000000000,
+     "rate": 1.5
+    },
+    {
+     "upTo": null,
+     "rate": 0.5
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 7,000만원까지 연 3.0%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
+  },
+  {
+   "bank": "SBI저축은행",
+   "product": "생활파킹통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 2000000,
+     "rate": 2.7
+    },
+    {
+     "upTo": 100000000,
+     "rate": 1.7
+    },
+    {
+     "upTo": null,
+     "rate": 0.2
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "sbi_life_new",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "신규고객 (계좌 개설 후 1년간)",
+     "rate": 4.0,
+     "capAmount": 2000000,
+     "months": 12
+    },
+    {
+     "id": "sbi_life_youth",
+     "requires": [
+      "age39"
+     ],
+     "label": "만 39세 이하",
+     "rate": 0.5,
+     "capAmount": 2000000,
+     "months": null
+    },
+    {
+     "id": "sbi_life_simplepay",
+     "requires": [
+      "simplePayRegister"
+     ],
+     "label": "간편결제 결제계좌 등록",
+     "rate": 0.5,
+     "capAmount": 2000000,
+     "months": null
+    }
+   ],
+   "notice": "우대금리는 200만원 이하 금액에만 붙어요. 신규고객 4.0%는 계좌 개설 후 1년 동안만 적용되고, 그 뒤에는 빠집니다. 1인 1계좌."
+  }
+ ]
 }
