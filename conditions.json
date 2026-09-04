@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-08-15",
+ "updatedAt": "2026-09-04",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -42,6 +42,16 @@
    "id": "simplePayRegister",
    "label": "간편결제 결제계좌로 등록할 수 있어요",
    "hint": "네이버페이·카카오페이 등에 이 계좌를 결제수단으로 등록하는 조건. 결제 실적까지는 요구하지 않습니다"
+  },
+  {
+   "id": "creditCardHold",
+   "label": "이 은행 신용카드를 갖고 있어요",
+   "hint": "가입 시점에 해당 은행 신용카드를 보유해야 합니다. 없으면 발급부터 해야 해요"
+  },
+  {
+   "id": "simplePayUse",
+   "label": "간편결제로 월 1건 이상 결제해요",
+   "hint": "이 계좌를 연결한 네이버페이·카카오페이 등의 결제 실적이 매달 필요합니다. 등록만으로는 안 됩니다"
   }
  ],
  "products": [
@@ -1063,6 +1073,109 @@
     }
    ],
    "notice": "우대금리는 200만원 이하 금액에만 붙어요. 신규고객 4.0%는 계좌 개설 후 1년 동안만 적용되고, 그 뒤에는 빠집니다. 1인 1계좌."
+  },
+  {
+   "bank": "전북은행",
+   "product": "씨드모아(카드우대) 통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "whole",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 1.8
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "jb_c_card",
+     "requires": [
+      "creditCardHold"
+     ],
+     "label": "가입 시 전북은행 신용카드 보유",
+     "rate": 1.2,
+     "capAmount": null,
+     "months": 3
+    },
+    {
+     "id": "jb_c_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "전북은행 첫 거래",
+     "rate": 0.8,
+     "capAmount": null,
+     "months": 3
+    },
+    {
+     "id": "jb_c_mkt",
+     "requires": [
+      "marketing"
+     ],
+     "label": "마케팅 동의",
+     "rate": 0.2,
+     "capAmount": null,
+     "months": 3
+    }
+   ],
+   "notice": "4.0%는 가입 후 3개월만입니다. 4개월째부터는 신용카드 전전월 실적에 따른 우대(50만원 이상 0.2%, 100만원 이상 0.4%)만 남아 최고 2.2%로 내려갑니다."
+  },
+  {
+   "bank": "NH저축은행",
+   "product": "NH FIC-One 보통예금",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "minAge": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 100000000,
+     "rate": 2.5
+    },
+    {
+     "upTo": null,
+     "rate": 0.2
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "nh_fic_auto",
+     "requires": [
+      "autoTransfer"
+     ],
+     "label": "자동납부·자동이체 출금 월 1건 이상",
+     "rate": 0.3,
+     "capAmount": 50000000,
+     "months": null
+    },
+    {
+     "id": "nh_fic_pay",
+     "requires": [
+      "simplePayUse"
+     ],
+     "label": "간편결제 거래 월 1건 이상",
+     "rate": 0.3,
+     "capAmount": 50000000,
+     "months": null
+    },
+    {
+     "id": "nh_fic_mkt",
+     "requires": [
+      "marketing"
+     ],
+     "label": "마케팅 동의",
+     "rate": 0.2,
+     "capAmount": 50000000,
+     "months": null
+    }
+   ],
+   "notice": "우대금리는 5천만원까지만 붙습니다. 5천만원을 넘는 금액에는 우대가 없고, 1억원을 넘으면 그 초과분은 0.2%입니다."
   }
  ]
 }
