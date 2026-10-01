@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-09-04",
+ "updatedAt": "2026-10-01",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -487,9 +487,9 @@
   },
   {
    "bank": "IBK저축은행",
-   "product": "IBKSB e-파킹통장",
+   "product": "IBKSB e-파킹통장 프로",
    "status": "ok",
-   "confidence": "conservative",
+   "confidence": "high",
    "eligibility": {
     "firstTradeRequired": true,
     "personalOnly": true
@@ -497,12 +497,8 @@
    "tierMode": "marginal",
    "tiers": [
     {
-     "upTo": 100000000,
-     "rate": 2.7
-    },
-    {
-     "upTo": 300000000,
-     "rate": 2.8
+     "upTo": 200000000,
+     "rate": 3.5
     },
     {
      "upTo": 1000000000,
@@ -514,7 +510,7 @@
     }
    ],
    "bonuses": [],
-   "notice": "20영업일 이내 타 금융기관 입출금계좌를 만들었다면 가입이 제한됩니다."
+   "notice": "비대면 전용입니다. 20영업일 이내 타 금융기관 입출금계좌를 만들었다면 가입이 제한됩니다. 2억원까지 연 3.5%가 붙고, 2억 초과분은 1.5%, 10억 초과분은 0.1%로 떨어집니다."
   },
   {
    "bank": "IBK저축은행",
@@ -976,7 +972,7 @@
    "tiers": [
     {
      "upTo": 70000000,
-     "rate": 3.0
+     "rate": 3.2
     },
     {
      "upTo": 1000000000,
@@ -988,7 +984,7 @@
     }
    ],
    "bonuses": [],
-   "notice": "우대조건 없이 7,000만원까지 연 3.0%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
+   "notice": "우대조건 없이 7,000만원까지 연 3.2%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
   },
   {
    "bank": "DB저축은행",
@@ -1003,7 +999,7 @@
    "tiers": [
     {
      "upTo": 70000000,
-     "rate": 3.0
+     "rate": 3.2
     },
     {
      "upTo": 1000000000,
@@ -1015,7 +1011,7 @@
     }
    ],
    "bonuses": [],
-   "notice": "우대조건 없이 7,000만원까지 연 3.0%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
+   "notice": "우대조건 없이 7,000만원까지 연 3.2%가 붙습니다. 7,000만원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
   },
   {
    "bank": "SBI저축은행",
@@ -1176,6 +1172,133 @@
     }
    ],
    "notice": "우대금리는 5천만원까지만 붙습니다. 5천만원을 넘는 금액에는 우대가 없고, 1억원을 넘으면 그 초과분은 0.2%입니다."
+  },
+  {
+   "bank": "키움YES저축은행",
+   "product": "예스파킹통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 30000000,
+     "rate": 0.5
+    },
+    {
+     "upTo": 50000000,
+     "rate": 2.0
+    },
+    {
+     "upTo": 100000000,
+     "rate": 2.4
+    },
+    {
+     "upTo": null,
+     "rate": 3.3
+    }
+   ],
+   "bonuses": [],
+   "notice": "금액이 클수록 금리가 올라가는 거꾸로 구조입니다. 3천만원까지는 0.5%뿐이고, 1억원을 넘는 금액에만 3.3%가 붙습니다. 모바일앱(SB톡톡+) 전용, 1인 1계좌입니다."
+  },
+  {
+   "bank": "신한저축은행",
+   "product": "참신한파킹통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "firstTradeRequired": true,
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 100000000,
+     "rate": 3.2
+    },
+    {
+     "upTo": 1000000000,
+     "rate": 2.7
+    },
+    {
+     "upTo": null,
+     "rate": 2.2
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 1억원까지 연 3.2%가 붙습니다. 초과분도 2.7%라 떨어지는 폭이 작습니다. 최근 20영업일 안에 입출금통장을 만든 적이 있으면 가입이 제한됩니다."
+  },
+  {
+   "bank": "대신저축은행",
+   "product": "더드리고입출금통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 200000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 2억원까지 연 3.0%가 붙습니다. 2억 초과분은 0.1%입니다. 스마트뱅크 가입 고객만, 1인 1계좌입니다."
+  },
+  {
+   "bank": "참저축은행",
+   "product": "파킹통장",
+   "status": "ok",
+   "confidence": "inferred",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 5000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [],
+   "notice": "3.0%가 붙는 한도가 500만원뿐입니다. 초과분은 0.1%라 큰 금액을 넣을 통장은 아닙니다. 비대면(SB톡톡+) 전용이고 외국인은 가입할 수 없습니다."
+  },
+  {
+   "bank": "참저축은행",
+   "product": "모임통장",
+   "status": "ok",
+   "confidence": "inferred",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 10000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [],
+   "notice": "3.0%가 붙는 한도가 1,000만원입니다. 초과분은 0.1%입니다. 비대면(SB톡톡+) 전용이며, 이자에 대한 세금은 모임장(예금주)에게 부과됩니다."
   }
  ]
 }
