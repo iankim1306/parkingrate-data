@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-10-01",
+ "updatedAt": "2026-10-12",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -449,6 +449,46 @@
    "notice": "공시 최고금리 3.5%와 우대조건 합계(3.0%)가 맞지 않아, 확인 가능한 조건만으로 낮게 계산했습니다."
   },
   {
+   "bank": "예가람저축은행",
+   "product": "E-RUN급여 파킹통장",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": null,
+     "rate": 2.2
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "yegaram_salary",
+     "requires": [
+      "salary"
+     ],
+     "label": "이 통장으로 급여이체",
+     "rate": 0.4,
+     "capAmount": null,
+     "months": null
+    },
+    {
+     "id": "yegaram_salary_auto",
+     "requires": [
+      "autoTransfer"
+     ],
+     "label": "예가람 대출·적금 납입금 자동이체",
+     "rate": 0.4,
+     "capAmount": null,
+     "months": null
+    }
+   ],
+   "notice": "모바일 전용 상품입니다(예스뱅킹, SB톡톡+). 급여이체와 자동이체 우대를 모두 채워야 3.0%입니다. 자동이체 우대는 예가람저축은행 대출 월납입금이나 적금 월불입금을 이 통장으로 걸어야 받을 수 있습니다."
+  },
+  {
    "bank": "DB저축은행",
    "product": "DB행복파킹통장",
    "status": "ok",
@@ -538,11 +578,11 @@
    "tiers": [
     {
      "upTo": 200000000,
-     "rate": 3.1
+     "rate": 3.2
     },
     {
      "upTo": null,
-     "rate": 3.1
+     "rate": 3.2
     }
    ],
    "bonuses": [],
