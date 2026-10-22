@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-10-20",
+ "updatedAt": "2026-10-22",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -1339,6 +1339,32 @@
    ],
    "bonuses": [],
    "notice": "3.0%가 붙는 한도가 1,000만원입니다. 초과분은 0.1%입니다. 비대면(SB톡톡+) 전용이며, 이자에 대한 세금은 모임장(예금주)에게 부과됩니다."
+  },
+  {
+   "bank": "에스앤티저축은행",
+   "product": "우리가족사랑통장",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "personalOnly": true
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 10000000,
+     "rate": 0.5
+    },
+    {
+     "upTo": 100000000,
+     "rate": 3.1
+    },
+    {
+     "upTo": null,
+     "rate": 3.0
+    }
+   ],
+   "bonuses": [],
+   "notice": "우대조건 없이 금액 구간대로 받습니다(1천만원 미만 0.5%, 1천만원~1억원 3.1%, 1억원 이상 3.0%). 잔액 전체에 붙는지 구간별로 나눠 붙는지 공시에 없어, 덜 받는 쪽인 구간별로 계산했어요. 영업점 창구에서 만들어야 하는 통장입니다."
   }
  ]
 }
