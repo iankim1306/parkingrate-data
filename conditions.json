@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-10-22",
+ "updatedAt": "2026-10-31",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -523,40 +523,6 @@
    "product": "The프리미엄 Biz통장",
    "status": "excluded",
    "excludeReason": "법인·개인사업자 전용 상품입니다.",
-   "confidence": "high"
-  },
-  {
-   "bank": "IBK저축은행",
-   "product": "IBKSB e-파킹통장 프로",
-   "status": "ok",
-   "confidence": "high",
-   "eligibility": {
-    "firstTradeRequired": true,
-    "personalOnly": true
-   },
-   "tierMode": "marginal",
-   "tiers": [
-    {
-     "upTo": 200000000,
-     "rate": 3.5
-    },
-    {
-     "upTo": 1000000000,
-     "rate": 1.5
-    },
-    {
-     "upTo": null,
-     "rate": 0.1
-    }
-   ],
-   "bonuses": [],
-   "notice": "비대면 전용입니다. 20영업일 이내 타 금융기관 입출금계좌를 만들었다면 가입이 제한됩니다. 2억원까지 연 3.5%가 붙고, 2억 초과분은 1.5%, 10억 초과분은 0.1%로 떨어집니다."
-  },
-  {
-   "bank": "IBK저축은행",
-   "product": "IBK모임통장",
-   "status": "excluded",
-   "excludeReason": "모임장·모임원 구조의 모임 전용 통장입니다. 개인 파킹 용도가 아닙니다.",
    "confidence": "high"
   },
   {
@@ -1293,6 +1259,40 @@
    ],
    "bonuses": [],
    "notice": "우대조건 없이 2억원까지 연 3.4%가 붙습니다. 2억 초과분은 0.1%입니다. 스마트뱅크 가입 고객만, 1인 1계좌입니다."
+  },
+  {
+   "bank": "키움저축은행",
+   "product": "더 키움 플러스 파킹통장",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "whole",
+   "tiers": [
+    {
+     "upTo": 200000000,
+     "rate": 3.3
+    },
+    {
+     "upTo": null,
+     "rate": 2.0
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "kiwoom_plus_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "키움저축은행 예·적금(입출금 포함) 가입 이력 없음",
+     "rate": 0.1,
+     "capAmount": 200000000,
+     "months": null
+    }
+   ],
+   "notice": "잔액 2억원 이하면 연 3.3%, 2억원을 넘으면 2.0%입니다. 키움저축은행과 처음 거래하면 0.1%p가 더 붙어요. 넘은 부분만 2.0%인지 잔액 전체가 2.0%가 되는지 공시에 없어, 덜 받는 쪽인 잔액 전체로 계산했습니다. 비대면 전용, 1인 1계좌이고 최근 20영업일 안에 입출금통장을 만든 적이 있으면 가입이 제한됩니다."
   },
   {
    "bank": "참저축은행",
