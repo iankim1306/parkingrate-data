@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-10-31",
+ "updatedAt": "2026-11-03",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -1020,7 +1020,83 @@
    "notice": "우대조건 없이 1억원까지 연 3.3%가 붙습니다. 1억원 초과분은 1.5%, 10억 초과분은 0.5%로 뚝 떨어집니다."
   },
   {
-   "bank": "SBI저축은행",
+   "bank": "HB저축은행",
+   "product": "HB하루플러스통장",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 1000000,
+     "rate": 5.0
+    },
+    {
+     "upTo": 10000000,
+     "rate": 4.0
+    },
+    {
+     "upTo": 50000000,
+     "rate": 3.0
+    },
+    {
+     "upTo": null,
+     "rate": 2.5
+    }
+   ],
+   "bonuses": [
+    {
+     "id": "hb_haru_first",
+     "requires": [
+      "firstTrade"
+     ],
+     "label": "HB저축은행 첫 거래 (예·적금·입출금 가입 이력 없음)",
+     "rate": 0.2,
+     "capAmount": 1000000,
+     "months": null
+    }
+   ],
+   "notice": "모바일앱(SB톡톡+) 전용, 1인 1계좌입니다. 100만원까지 연 5.0%, 1천만원까지 4.0%, 5천만원까지 3.0%, 그 초과분은 2.5%가 붙습니다. 첫 거래 우대 0.2%p가 어느 금액까지 붙는지 공시에 없어 100만원 이하에만 붙는 것으로 계산했습니다."
+  },
+  {
+   "bank": "IBK저축은행",
+   "product": "IBKSB e-파킹통장 ",
+   "status": "ok",
+   "confidence": "high",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "marginal",
+   "tiers": [
+    {
+     "upTo": 300000000,
+     "rate": 3.2
+    },
+    {
+     "upTo": 1000000000,
+     "rate": 1.5
+    },
+    {
+     "upTo": null,
+     "rate": 0.1
+    }
+   ],
+   "bonuses": [],
+   "notice": "비대면 전용, 1인 1계좌이고 이 은행 파킹통장이 이미 있으면 가입이 안 됩니다. 최근 20영업일 안에 입출금통장을 만들었어도 제한됩니다. 3억원까지 연 3.2%, 3억 초과분은 1.5%, 10억 초과분은 0.1%입니다."
+  },
+  {
+   "bank": "IBK저축은행",
+   "product": "IBK모임통장",
+   "status": "excluded",
+   "excludeReason": "모임장·모임원 구조의 모임 전용 통장입니다. 개인 파킹 용도가 아닙니다.",
+   "confidence": "high"
+  },
+  {
+   "bank": "교보SBI저축은행",
    "product": "생활파킹통장",
    "status": "ok",
    "confidence": "high",
