@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-11-03",
+ "updatedAt": "2026-11-05",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -633,7 +633,7 @@
    "tiers": [
     {
      "upTo": 50000000,
-     "rate": 3.01
+     "rate": 3.5
     },
     {
      "upTo": 100000000,
@@ -646,6 +646,33 @@
    ],
    "bonuses": [],
    "notice": "우대조건 없이 구간별로 그대로 받습니다."
+  },
+  {
+   "bank": "모아저축은행",
+   "product": "e-모아파킹통장",
+   "status": "ok",
+   "confidence": "conservative",
+   "eligibility": {
+    "personalOnly": true,
+    "ageMin": 19
+   },
+   "tierMode": "whole",
+   "tiers": [
+    {
+     "upTo": 1000000,
+     "rate": 4.0
+    },
+    {
+     "upTo": 10000000,
+     "rate": 3.5
+    },
+    {
+     "upTo": null,
+     "rate": 1.0
+    }
+   ],
+   "bonuses": [],
+   "notice": "4.0%는 100만원까지만입니다. 1천만원을 넘기면 1.0%로 내려가며, 공시에 초과분만인지 적혀 있지 않아 잔액 전체에 적용해 낮게 계산했습니다."
   },
   {
    "bank": "다올저축은행",
