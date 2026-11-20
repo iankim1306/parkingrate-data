@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-11-07",
+ "updatedAt": "2026-11-20",
  "basis": "저축은행중앙회·은행연합회 공시 원문(sweetener/note/joinTarget)을 수기 구조화. 원문에 없는 값은 추정하지 않고 confidence로 표시한다.",
  "conditionCatalog": [
   {
@@ -1010,9 +1010,17 @@
      "rate": 0.7,
      "capAmount": 50000000,
      "months": 3
+    },
+    {
+     "id": "bnk_event_small",
+     "auto": true,
+     "label": "100만원 이하 금액 우대 (이벤트)",
+     "rate": 2.2,
+     "capAmount": 1000000,
+     "months": 3
     }
    ],
-   "notice": "경남은행 첫 거래 고객만 가입할 수 있고, 이벤트 우대는 3개월 한정입니다."
+   "notice": "경남은행 첫 거래 고객만 가입할 수 있고, 이벤트 우대는 3개월 한정입니다. 최고 5.2%는 100만원 이하 금액에만 붙습니다."
   },
   {
    "bank": "DB저축은행",
